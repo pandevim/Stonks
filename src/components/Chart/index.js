@@ -47,7 +47,7 @@ const styles = {
     backgroundColor: '#ffffff',
     borderRadius: '4px',
     padding: '10px',
-    minWidth: 350
+    minWidth: 300
   },
   doughnut: {
     width: 250

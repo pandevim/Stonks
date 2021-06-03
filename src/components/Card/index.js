@@ -15,34 +15,40 @@ import { FaRegMoneyBillAlt } from 'react-icons/fa';
 const Card = ({ stock, marketValue, currency }) => {
   return (
     <div className="Card" style={styles.card}>
-      <Container>
-        <Drag />
-      </Container>
-      <Container style={styles.price}>
-        <Scrip>{stock.scrip}</Scrip>
-        <MarketValue>{stock.price}</MarketValue>
-      </Container>
-      <Container>
-        <CompanyLogo />
-        <CompanyIndex name={stock.scrip} />
-        <CompanyEquity name={'US Equity'} />
-      </Container>
-      <Container>
-        <Entry icon={<BiCoinStack />} name="Quantity" value={stock.quantity} />
-        <Entry
-          icon={<BiVerticalCenter />}
-          name="Avg. Cost"
-          value={stock.averageCost}
-          currency={currency}
-        />
-        <Entry
-          icon={<FaRegMoneyBillAlt />}
-          name="Invested Amt."
-          value={stock.investedAmount}
-          currency={currency}
-        />
-      </Container>
-      <Container>
+      <div style={styles.first}>
+        <Container>
+          <Drag />
+        </Container>
+        <Container style={{ ...styles.price }}>
+          <Scrip>{stock.scrip}</Scrip>
+          <MarketValue>{stock.price}</MarketValue>
+        </Container>
+        <Container style={{ backgroundColor: '#f9f9f9' }}>
+          <CompanyLogo />
+          <CompanyIndex name={stock.scrip} />
+          <CompanyEquity name={'US Equity'} />
+        </Container>
+        <Container>
+          <Entry
+            icon={<BiCoinStack />}
+            name="Quantity"
+            value={stock.quantity}
+          />
+          <Entry
+            icon={<BiVerticalCenter />}
+            name="Avg. Cost"
+            value={stock.averageCost}
+            currency={currency}
+          />
+          <Entry
+            icon={<FaRegMoneyBillAlt />}
+            name="Invested Amt."
+            value={stock.investedAmount}
+            currency={currency}
+          />
+        </Container>
+      </div>
+      <Container style={{ backgroundColor: '#f9f9f9' }}>
         <Entry
           style={{ color: 'black', fontWeight: '500' }}
           name="Market Value"
@@ -56,7 +62,7 @@ const Card = ({ stock, marketValue, currency }) => {
         />
         <ProgressBar value={stock.portfolioValuePercentage} />
       </Container>
-      <Container>
+      <Container style={{ backgroundColor: '#f9f9f9' }}>
         <Entry
           style={{ color: 'black', fontWeight: '500' }}
           name="Unrealized P/L"
@@ -94,6 +100,13 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  first: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f9f9f9'
   }
 };
 

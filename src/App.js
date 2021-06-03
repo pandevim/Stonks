@@ -65,7 +65,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    backgroundColor: '#e6e6e6',
     height: '100vh'
   },
   cards: {

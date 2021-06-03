@@ -1,5 +1,17 @@
 import { Doughnut } from 'react-chartjs-2';
 
+import { IoMdArrowDropdown } from 'react-icons/io';
+
+const options = {
+  cutoutPercentage: 40,
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'right'
+    }
+  }
+};
+
 const Chart = ({ mf, etf }) => {
   const data = {
     labels: ['Mutual Funds', 'ETFs'],
@@ -15,7 +27,16 @@ const Chart = ({ mf, etf }) => {
 
   return (
     <div className="Chart" style={styles.chart}>
-      <Doughnut data={data} />
+      <div style={styles.header}>
+        <span style={styles.heading}>Portfolio</span>
+        <div style={styles.software}>
+          <span>Asset-wise</span>
+          <IoMdArrowDropdown />
+        </div>
+      </div>
+      <div style={styles.doughnut}>
+        <Doughnut data={data} options={options} />
+      </div>
     </div>
   );
 };
@@ -25,7 +46,22 @@ const styles = {
     margin: '10px',
     backgroundColor: '#ffffff',
     borderRadius: '4px',
-    padding: '10px'
+    padding: '10px',
+    minWidth: 350
+  },
+  doughnut: {
+    width: 250
+  },
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '5px'
+  },
+  heading: {
+    fontSize: '1.3em',
+    fontWeight: 600
   }
 };
 

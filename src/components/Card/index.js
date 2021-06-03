@@ -43,7 +43,12 @@ const Card = ({ stock, marketValue, currency }) => {
         />
       </Container>
       <Container>
-        <Entry name="Market Value" value={marketValue} currency={currency} />
+        <Entry
+          style={{ color: 'black', fontWeight: '500' }}
+          name="Market Value"
+          value={marketValue}
+          currency={currency}
+        />
         <Entry
           name="% of portfolio value"
           value={stock.portfolioValuePercentage}
@@ -53,6 +58,7 @@ const Card = ({ stock, marketValue, currency }) => {
       </Container>
       <Container>
         <Entry
+          style={{ color: 'black', fontWeight: '500' }}
           name="Unrealized P/L"
           value={stock.unrealizedPAndL}
           currency={currency}
@@ -72,7 +78,7 @@ const styles = {
   card: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#ffffff',
     margin: '10px',

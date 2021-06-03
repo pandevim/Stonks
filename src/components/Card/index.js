@@ -8,8 +8,7 @@ import Entry from './Entry';
 import ProgressBar from './ProgressBar';
 import ReturnIndicatorBar from './ReturnIndicatorBar';
 
-const Card = ({ stock }) => {
-  const marketValue = stock.price * stock.quantity;
+const Card = ({ stock, marketValue }) => {
   return (
     <div className="Card" style={styles.card}>
       <Container>
@@ -17,7 +16,7 @@ const Card = ({ stock }) => {
       </Container>
       <Container>
         <Scrip>{stock.scrip}</Scrip>
-        <MarketValue>{marketValue}</MarketValue>
+        <MarketValue>{stock.price}</MarketValue>
       </Container>
       <Container>
         <CompanyLogo />

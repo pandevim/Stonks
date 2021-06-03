@@ -1,7 +1,9 @@
-const Chart = () => {
+const Chart = ({ mf, etf }) => {
   return (
     <div className="Chart" style={styles.chart}>
-      chart
+      {mf}
+      <br />
+      {etf}
     </div>
   );
 };

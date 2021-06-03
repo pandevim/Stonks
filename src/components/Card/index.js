@@ -11,7 +11,7 @@ import ReturnIndicatorBar from './ReturnIndicatorBar';
 const Card = ({ stock }) => {
   const marketValue = stock.price * stock.quantity;
   return (
-    <div className="Card">
+    <div className="Card" style={styles.card}>
       <Container>
         <Drag />
       </Container>
@@ -46,6 +46,15 @@ const Card = ({ stock }) => {
       </Container>
     </div>
   );
+};
+
+const styles = {
+  card: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 };
 
 export default Card;

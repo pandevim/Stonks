@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadStocksSuccess } from './state/actions/stocksAction';
-import { Home } from './layouts';
 import { Chart, Card } from './components';
 
 const App = () => {
@@ -12,22 +11,38 @@ const App = () => {
   useEffect(() => dispatch(loadStocksSuccess()), [dispatch]);
 
   return (
-    <div className="App">
+    <div className="App" style={styles.container}>
       {loading && <p>loading</p>}
       {!loading && (
-        <Home>
-          <article>
+        <>
+          <article className="cards" style={styles.cards}>
             {data.stocks.map((stock, i) => (
               <Card key={i} stock={stock} />
             ))}
           </article>
-          <aside>
+          <aside className="chart" style={styles.chart}>
             <Chart />
           </aside>
-        </Home>
+        </>
       )}
     </div>
   );
+};
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  cards: {
+    border: '2px solid black',
+    borderRadius: '10px'
+  },
+  chart: {
+    border: '2px solid black',
+    borderRadius: '10px'
+  }
 };
 
 export default App;

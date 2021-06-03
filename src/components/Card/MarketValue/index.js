@@ -9,7 +9,7 @@ const MarketValue = props => {
 const styles = {
   marketvalue: {
     color: '#24a5b8',
-    fontSize: '1.3em',
+    fontSize: '1.2em',
     fontWeight: '600'
   }
 };

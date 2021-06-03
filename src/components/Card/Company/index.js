@@ -1,5 +1,5 @@
 import CompanyLogo from './CompanyLogo';
-import CompanyClient from './CompanyClient';
-import CompanyName from './CompanyName';
+import CompanyEquity from './CompanyEquity';
+import CompanyIndex from './CompanyIndex';
 
-export { CompanyLogo, CompanyClient, CompanyName };
+export { CompanyLogo, CompanyEquity, CompanyIndex };

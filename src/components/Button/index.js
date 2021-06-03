@@ -16,7 +16,8 @@ const styles = {
     paddingTop: '6px',
     paddingBottom: '6px',
     borderRadius: '4px',
-    fontWeight: '600'
+    fontWeight: '600',
+    margin: '5px'
   }
 };
 

@@ -9,6 +9,7 @@ const App = () => {
   const [etf, setEtf] = useState(0);
 
   const data = useSelector(store => store.stocks.data);
+  const currency = useSelector(store => store.stocks.data.currency);
   const loading = useSelector(store => store.stocks.loading);
 
   const dispatch = useDispatch();
@@ -42,7 +43,12 @@ const App = () => {
         <>
           <article className="cards" style={styles.cards}>
             {data.stocks.map((stock, i) => (
-              <Card key={i} stock={stock} marketValue={marketValue[i]} />
+              <Card
+                key={i}
+                stock={stock}
+                marketValue={marketValue[i]}
+                currency={currency}
+              />
             ))}
           </article>
           <aside className="chart" style={styles.chart}>
@@ -59,10 +65,15 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    backgroundColor: '#e6e6e6'
+    backgroundColor: '#e6e6e6',
+    height: '100vh'
   },
-  cards: {},
-  chart: {}
+  cards: {
+    height: '100%'
+  },
+  chart: {
+    height: '100%'
+  }
 };
 
 export default App;

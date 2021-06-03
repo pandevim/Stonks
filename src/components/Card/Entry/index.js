@@ -1,9 +1,17 @@
-const Entry = ({ icon, name, value }) => {
+import symbol from '../../../helpers/symbol';
+
+const Entry = ({ icon, name, value, currency, percent }) => {
   return (
     <div className="Entry" style={styles.entry}>
-      <div style={styles.icon}>{icon}</div>
-      <span>{name}</span>
-      <span style={styles.value}>{value}</span>
+      {icon && <div style={styles.icon}>{icon}</div>}
+      <div style={styles.info}>
+        <span>{name}</span>
+        <span style={styles.value}>
+          {symbol[currency]}
+          {value}
+          {percent && '%'}
+        </span>
+      </div>
     </div>
   );
 };
@@ -12,7 +20,7 @@ const styles = {
   entry: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     width: '100%'
   },
@@ -21,7 +29,14 @@ const styles = {
     fontWeight: '500'
   },
   icon: {
-    color: 'black'
+    color: 'black',
+    paddingRight: '7px'
+  },
+  info: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%'
   }
 };
 

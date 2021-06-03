@@ -3,7 +3,7 @@ import { Container, Button } from '../';
 import Scrip from './Scrip';
 import MarketValue from './MarketValue';
 import Drag from './Drag';
-import { CompanyLogo, CompanyName, CompanyClient } from './Company';
+import { CompanyLogo, CompanyIndex, CompanyEquity } from './Company';
 import Entry from './Entry';
 import ProgressBar from './ProgressBar';
 import ReturnIndicatorBar from './ReturnIndicatorBar';
@@ -12,20 +12,20 @@ import { BiCoinStack } from 'react-icons/bi';
 import { BiVerticalCenter } from 'react-icons/bi';
 import { FaRegMoneyBillAlt } from 'react-icons/fa';
 
-const Card = ({ stock, marketValue }) => {
+const Card = ({ stock, marketValue, currency }) => {
   return (
     <div className="Card" style={styles.card}>
       <Container>
         <Drag />
       </Container>
-      <Container>
+      <Container style={styles.price}>
         <Scrip>{stock.scrip}</Scrip>
         <MarketValue>{stock.price}</MarketValue>
       </Container>
       <Container>
         <CompanyLogo />
-        <CompanyName name={stock.scrip} />
-        <CompanyClient name={'US Equity'} />
+        <CompanyIndex name={stock.scrip} />
+        <CompanyEquity name={'US Equity'} />
       </Container>
       <Container>
         <Entry icon={<BiCoinStack />} name="Quantity" value={stock.quantity} />
@@ -33,24 +33,31 @@ const Card = ({ stock, marketValue }) => {
           icon={<BiVerticalCenter />}
           name="Avg. Cost"
           value={stock.averageCost}
+          currency={currency}
         />
         <Entry
           icon={<FaRegMoneyBillAlt />}
           name="Invested Amt."
           value={stock.investedAmount}
+          currency={currency}
         />
       </Container>
       <Container>
-        <Entry name="Market Value" value={marketValue} />
+        <Entry name="Market Value" value={marketValue} currency={currency} />
         <Entry
           name="% of portfolio value"
           value={stock.portfolioValuePercentage}
+          percent={true}
         />
         <ProgressBar value={stock.portfolioValuePercentage} />
       </Container>
       <Container>
-        <Entry name="Unrealized P/L" value={stock.unrealizedPAndL} />
-        <Entry name="% Return" value={stock.returnPercentage} />
+        <Entry
+          name="Unrealized P/L"
+          value={stock.unrealizedPAndL}
+          currency={currency}
+        />
+        <Entry name="% Return" value={stock.returnPercentage} percent={true} />
         <ReturnIndicatorBar value={stock.returnPercentage} />
       </Container>
       <Container>
@@ -65,11 +72,17 @@ const styles = {
   card: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#ffffff',
     margin: '10px',
     borderRadius: '4px'
+  },
+  price: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 };
 

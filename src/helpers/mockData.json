@@ -1,0 +1,65 @@
+{
+  "currency": "USD",
+  "stocks": [
+    {
+      "scrip": "AADR",
+      "quantity": 430,
+      "price": 50.3,
+      "averageCost": 41.75,
+      "investedAmount": 17952.07,
+      "portfolioValuePercentage": 22.06,
+      "unrealizedPAndL": 3676.93,
+      "returnPercentage": 20.48
+    },
+    {
+      "scrip": "MFEM",
+      "quantity": 210,
+      "price": 23.2,
+      "averageCost": 22.5,
+      "investedAmount": 4725.84,
+      "portfolioValuePercentage": 5.81,
+      "unrealizedPAndL": 146.16,
+      "returnPercentage": 3.09
+    },
+    {
+      "scrip": "JPEM",
+      "quantity": 328,
+      "price": 52.5,
+      "averageCost": 56.7,
+      "investedAmount": 18597.6,
+      "portfolioValuePercentage": 22.86,
+      "unrealizedPAndL": -1377.6,
+      "returnPercentage": -7.41
+    },
+    {
+      "scrip": "KEMQ",
+      "quantity": 801,
+      "price": 20.4,
+      "averageCost": 22.24,
+      "investedAmount": 17811.04,
+      "portfolioValuePercentage": 21.89,
+      "unrealizedPAndL": -1470.64,
+      "returnPercentage": -8.26
+    },
+    {
+      "scrip": "KOIN",
+      "quantity": 335,
+      "price": 25.4,
+      "averageCost": 25.4,
+      "investedAmount": 8509,
+      "portfolioValuePercentage": 10.46,
+      "unrealizedPAndL": 0,
+      "returnPercentage": 0
+    },
+    {
+      "scrip": "KLDW",
+      "quantity": 523,
+      "price": 32.9,
+      "averageCost": 26.32,
+      "investedAmount": 13765.36,
+      "portfolioValuePercentage": 16.92,
+      "unrealizedPAndL": 3441.34,
+      "returnPercentage": 25
+    }
+  ]
+}

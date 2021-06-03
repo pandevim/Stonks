@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadStocksSuccess } from './state/actions/stocksAction';
+import { Home } from './layouts';
+import { Stocks, Chart, Card } from './components';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const data = useSelector(store => store.stocks.data);
+  const loading = useSelector(store => store.stocks.loading);
+
+  useEffect(() => dispatch(loadStocksSuccess()), [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!loading && (
+        <Home>
+          <main>
+            {data.stocks.map((stock, i) => (
+              <Card key={i} stock={stock} />
+            ))}
+          </main>
+          <aside>hi</aside>
+        </Home>
+      )}
     </div>
   );
-}
+};
 
 export default App;

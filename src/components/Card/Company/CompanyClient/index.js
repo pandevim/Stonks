@@ -1,5 +1,5 @@
-const CompanyClient = () => {
-  return <span className="CompanyClient">Company Client</span>;
+const CompanyClient = ({ name }) => {
+  return <span className="CompanyClient">{name}</span>;
 };
 
 export default CompanyClient;

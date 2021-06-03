@@ -33,14 +33,13 @@ const styles = {
   app: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#e6e6e6'
   },
   cards: {
-    border: '2px solid black',
     borderRadius: '10px'
   },
   chart: {
-    border: '2px solid black',
     borderRadius: '10px'
   }
 };

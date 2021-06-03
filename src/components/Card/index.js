@@ -17,12 +17,12 @@ const Card = ({ stock }) => {
       </Container>
       <Container>
         <Scrip>{stock.scrip}</Scrip>
-        <MarketValue>{marketValue} </MarketValue>
+        <MarketValue>{marketValue}</MarketValue>
       </Container>
       <Container>
         <CompanyLogo />
-        <CompanyName />
-        <CompanyClient />
+        <CompanyName name={stock.scrip} />
+        <CompanyClient name={'US Equity'} />
       </Container>
       <Container>
         <Entry name="Quantity" value={stock.quantity} />
@@ -54,8 +54,11 @@ const styles = {
   card: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    backgroundColor: '#f8f8f8',
+    margin: '10px',
+    borderRadius: '3px'
   }
 };
 

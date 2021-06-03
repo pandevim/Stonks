@@ -1,5 +1,5 @@
-const CompanyName = () => {
-  return <span className="CompanyName">company name</span>;
+const CompanyName = ({ name }) => {
+  return <span className="CompanyName">{name} Index</span>;
 };
 
 export default CompanyName;

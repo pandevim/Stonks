@@ -1,5 +1,5 @@
 const CompanyLogo = () => {
-  return <span className="CompanyLogo">Company Logo</span>;
+  return <span className="CompanyLogo">iShares</span>;
 };
 
 export default CompanyLogo;

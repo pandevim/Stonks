@@ -1,9 +1,13 @@
 const ProgressBar = ({ value }) => {
   return (
     <div className="ProgressBar">
-      <progress max="100" value={value}></progress>
+      <progress style={styles.progress} max="100" value={value}></progress>
     </div>
   );
+};
+
+const styles = {
+  progress: {}
 };
 
 export default ProgressBar;

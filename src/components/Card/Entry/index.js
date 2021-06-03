@@ -1,6 +1,9 @@
 import symbol from '../../../helpers/symbol';
 
-const Entry = ({ icon, name, value, currency, percent, style }) => {
+import { BsCaretUpFill } from 'react-icons/bs';
+import { BsCaretDownFill } from 'react-icons/bs';
+
+const Entry = ({ icon, name, value, currency, percent, style, fact }) => {
   return (
     <div className="Entry" style={{ ...style, ...styles.entry }}>
       {icon && <div style={styles.icon}>{icon}</div>}
@@ -8,6 +11,8 @@ const Entry = ({ icon, name, value, currency, percent, style }) => {
         <span>{name}</span>
         &nbsp; &nbsp;
         <span style={styles.value}>
+          {fact === 'profit' && <BsCaretUpFill color="green" />}
+          {fact === 'loss' && <BsCaretDownFill color="red" />}
           {symbol[currency]}
           {value}
           {percent && '%'}
@@ -28,7 +33,10 @@ const styles = {
   },
   value: {
     color: 'black',
-    fontWeight: '500'
+    fontWeight: '500',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   icon: {
     color: 'black',
@@ -38,6 +46,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     width: '100%'
   }
 };

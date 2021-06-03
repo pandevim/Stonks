@@ -63,7 +63,12 @@ const Card = ({ stock, marketValue, currency }) => {
           value={stock.unrealizedPAndL}
           currency={currency}
         />
-        <Entry name="% Return" value={stock.returnPercentage} percent={true} />
+        <Entry
+          name="% Return"
+          value={stock.returnPercentage}
+          percent={true}
+          fact={stock.returnPercentage > 0 ? 'profit' : 'loss'}
+        />
         <ReturnIndicatorBar value={stock.returnPercentage} />
       </Container>
       <Container>

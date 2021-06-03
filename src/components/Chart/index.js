@@ -1,9 +1,21 @@
+import { Doughnut } from 'react-chartjs-2';
+
 const Chart = ({ mf, etf }) => {
+  const data = {
+    labels: ['Mutual Funds', 'ETFs'],
+    datasets: [
+      {
+        label: 'Portfolio',
+        data: [mf, etf],
+        backgroundColor: ['#5dbad6', '#a89853'],
+        borderWidth: 0
+      }
+    ]
+  };
+
   return (
     <div className="Chart" style={styles.chart}>
-      {mf}
-      <br />
-      {etf}
+      <Doughnut data={data} />
     </div>
   );
 };

@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
+
 const Home = props => {
-  return <div className="Home">{props.children}</div>;
+  useEffect(() => console.log(props.children.article), [props]);
+  return <main className="Home">{props.children}</main>;
 };
 
 export default Home;

@@ -1,5 +1,5 @@
 import Card from './Card';
 import Chart from './Chart';
-import Stocks from './Stocks';
+import Container from './Container';
 
-export { Card, Chart, Stocks };
+export { Card, Chart, Container };

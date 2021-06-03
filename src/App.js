@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadStocksSuccess } from './state/actions/stocksAction';
 import { Home } from './layouts';
-import { Stocks, Chart, Card } from './components';
+import { Chart, Card } from './components';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -13,14 +13,17 @@ const App = () => {
 
   return (
     <div className="App">
+      {loading && <p>loading</p>}
       {!loading && (
         <Home>
-          <main>
+          <article>
             {data.stocks.map((stock, i) => (
               <Card key={i} stock={stock} />
             ))}
-          </main>
-          <aside>hi</aside>
+          </article>
+          <aside>
+            <Chart />
+          </aside>
         </Home>
       )}
     </div>

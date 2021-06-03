@@ -23,7 +23,8 @@ const Chart = ({ mf, etf }) => {
 const styles = {
   chart: {
     margin: '10px',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    borderRadius: '4px'
   }
 };
 

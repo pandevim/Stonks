@@ -61,12 +61,8 @@ const styles = {
     justifyContent: 'center',
     backgroundColor: '#e6e6e6'
   },
-  cards: {
-    borderRadius: '10px'
-  },
-  chart: {
-    borderRadius: '10px'
-  }
+  cards: {},
+  chart: {}
 };
 
 export default App;

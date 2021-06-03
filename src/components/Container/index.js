@@ -12,7 +12,8 @@ const styles = {
     flexDirection: 'column',
     justifyConent: 'center',
     alignItems: 'center',
-    height: '100%'
+    padding: '10px',
+    color: '#b0b0b0'
   }
 };
 

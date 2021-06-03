@@ -8,6 +8,10 @@ import Entry from './Entry';
 import ProgressBar from './ProgressBar';
 import ReturnIndicatorBar from './ReturnIndicatorBar';
 
+import { BiCoinStack } from 'react-icons/bi';
+import { BiVerticalCenter } from 'react-icons/bi';
+import { FaRegMoneyBillAlt } from 'react-icons/fa';
+
 const Card = ({ stock, marketValue }) => {
   return (
     <div className="Card" style={styles.card}>
@@ -24,9 +28,17 @@ const Card = ({ stock, marketValue }) => {
         <CompanyClient name={'US Equity'} />
       </Container>
       <Container>
-        <Entry name="Quantity" value={stock.quantity} />
-        <Entry name="Avg. Cost" value={stock.averageCost} />
-        <Entry name="Invested Amt." value={stock.investedAmount} />
+        <Entry icon={<BiCoinStack />} name="Quantity" value={stock.quantity} />
+        <Entry
+          icon={<BiVerticalCenter />}
+          name="Avg. Cost"
+          value={stock.averageCost}
+        />
+        <Entry
+          icon={<FaRegMoneyBillAlt />}
+          name="Invested Amt."
+          value={stock.investedAmount}
+        />
       </Container>
       <Container>
         <Entry name="Market Value" value={marketValue} />
@@ -57,7 +69,7 @@ const styles = {
     alignItems: 'center',
     backgroundColor: '#f8f8f8',
     margin: '10px',
-    borderRadius: '3px'
+    borderRadius: '4px'
   }
 };
 

@@ -3,7 +3,7 @@ import { Container, Button } from '../';
 import Scrip from './Scrip';
 import MarketValue from './MarketValue';
 import Drag from './Drag';
-import CompanyName from './CompanyName';
+import { CompanyLogo, CompanyName, CompanyClient } from './Company';
 import Entry from './Entry';
 import ProgressBar from './ProgressBar';
 import ReturnIndicatorBar from './ReturnIndicatorBar';
@@ -20,7 +20,9 @@ const Card = ({ stock }) => {
         <MarketValue>{marketValue} </MarketValue>
       </Container>
       <Container>
+        <CompanyLogo />
         <CompanyName />
+        <CompanyClient />
       </Container>
       <Container>
         <Entry name="Quantity" value={stock.quantity} />

@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => dispatch(loadStocksSuccess()), [dispatch]);
 
   return (
-    <div className="App" style={styles.container}>
+    <div className="App" style={styles.app}>
       {loading && <p>loading</p>}
       {!loading && (
         <>
@@ -30,7 +30,7 @@ const App = () => {
 };
 
 const styles = {
-  container: {
+  app: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center'

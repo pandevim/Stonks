@@ -1,0 +1,27 @@
+input[type='range'] {
+  overflow: hidden;
+  -webkit-appearance: none;
+  background-color: #f9f9f9;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  -webkit-appearance: none;
+  margin-top: -1px;
+}
+
+input[type='range']#neg::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: ew-resize;
+  background: #ff0000;
+}
+
+input[type='range']#pos::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: ew-resize;
+  background: rgb(0, 255, 0);
+}

@@ -8,13 +8,14 @@ const Container = props => {
 
 const styles = {
   container: {
+    color: '#b0b0b0',
+    padding: '10px',
     display: 'flex',
     flexDirection: 'column',
-    justifyConent: 'center',
-    alignItems: 'flex-start',
-    padding: '10px',
-    color: '#b0b0b0',
-    margin: '5px'
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+    borderRadius: '4px'
   }
 };
 

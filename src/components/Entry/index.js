@@ -1,4 +1,4 @@
-import symbol from '../../../helpers/symbol';
+import symbol from '../../helpers/symbol';
 
 import { BsCaretUpFill } from 'react-icons/bs';
 import { BsCaretDownFill } from 'react-icons/bs';

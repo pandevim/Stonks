@@ -43,11 +43,11 @@ const Chart = ({ mf, etf }) => {
 
 const styles = {
   chart: {
-    margin: '10px',
     backgroundColor: '#ffffff',
     borderRadius: '4px',
     padding: '10px',
-    minWidth: 300
+    minWidth: 300,
+    height: '100%'
   },
   doughnut: {
     width: 250
